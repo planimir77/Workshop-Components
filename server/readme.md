@@ -1,5 +1,10 @@
 # REST-api for Angular course in SoftUni
 
+## Build
+To bring life on that API you should
+    - first install the dependencies with the command `npm install`
+    - after that start the server, run the command `npm start` 
+
 ## Getting started
 Let's make our first API request to the REST-api!
 
@@ -20,6 +25,9 @@ Here is the response we get:
 
 If your response looks slightly different don't panic. This is probably because more data has been added to the API since I made this documentation.
 
+In order to fetch the themes, you will have to make a GET request on :
+ ```localhost:3000/api/themes``` .
+ 
 ## Base URL
 The Base URL is the root URL for all of the API, if you ever make a request to the API and you get back a 404 NOT FOUND response then check the Base URL first.
 
