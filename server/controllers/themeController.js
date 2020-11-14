@@ -2,6 +2,7 @@ const { themeModel } = require('../models');
 const { newPost } = require('./postController')
 
 function getThemes(req, res, next) {
+    console.log("Themes");
     themeModel.find()
         .populate('userId')
         .then(themes => res.json(themes))
@@ -10,7 +11,6 @@ function getThemes(req, res, next) {
 
 function getTheme(req, res, next) {
     const { themeId } = req.params;
-
     themeModel.findById(themeId)
         .populate({
             path : 'posts',
