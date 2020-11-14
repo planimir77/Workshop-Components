@@ -29,7 +29,8 @@ function createTheme(req, res, next) {
     themeModel.create({ themeName, userId, subscribers: [userId] })
         .then(theme => {
             newPost(postText, userId, theme._id)
-                .then(([_, updatedTheme]) => res.status(200).json(updatedTheme))
+                .then(([_, updatedTheme]) => res.status(201).json(updatedTheme))
+                .catch(next);
         })
         .catch(next);
 }

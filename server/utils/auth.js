@@ -23,6 +23,7 @@ function auth(redirectUnauthenticated = true) {
                         req.isLogged = true;
                         next();
                     })
+                    .catch(err => next(err));
             })
             .catch(err => {
                 if (!redirectUnauthenticated) {

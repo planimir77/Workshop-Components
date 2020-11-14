@@ -21,12 +21,9 @@ function register(req, res, next) {
             createdUser = removePassword(createdUser);
 
             const token = utils.jwt.createToken({ id: createdUser._id });
-            if (process.env.NODE_ENV === 'production') {
-                res.cookie(authCookieName, token, { httpOnly: true, sameSite: 'none', secure: true })
-            } else {
-                res.cookie(authCookieName, token, { httpOnly: true })
-            }
-            res.status(200)
+            
+            res.cookie(authCookieName, token);
+            res.status(201)
                 .send(createdUser);
         })
         .catch(err => {
@@ -61,11 +58,7 @@ function login(req, res, next) {
 
             const token = utils.jwt.createToken({ id: user._id });
 
-            if (process.env.NODE_ENV === 'production') {
-                res.cookie(authCookieName, token, { httpOnly: true, sameSite: 'none', secure: true })
-            } else {
-                res.cookie(authCookieName, token, { httpOnly: true })
-            }
+            res.cookie(authCookieName, token);
             res.status(200)
                 .send(user);
         })
@@ -81,7 +74,10 @@ function logout(req, res) {
                 .status(401)
                 .send({ message: 'Logged out!' });
         })
-        .catch(err => res.send(err));
+        .catch(err => {
+            res.status(304)
+                .send({ error: err.message });
+        });
 }
 
 function getProfileInfo(req, res, next) {
