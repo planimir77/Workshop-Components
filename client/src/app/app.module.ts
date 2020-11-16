@@ -31,7 +31,9 @@ import { FooterComponent } from './footer/footer.component';
   providers: [ThemeService],
   bootstrap: [
     AppComponent,
-    HeaderComponent,]
+    HeaderComponent,
+    FooterComponent,
+  ]
 })
 export class AppModule {
 }
