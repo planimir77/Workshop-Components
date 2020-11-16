@@ -7,6 +7,7 @@ import { ThemeComponent } from './theme/theme.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThemeService } from './theme/theme.service';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     ThemeComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
