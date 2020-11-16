@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ThemeComponent } from './theme/theme.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThemeService } from './theme/theme.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ThemeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,9 @@ import { ThemeService } from './theme/theme.service';
     HttpClientModule
   ],
   providers: [ThemeService],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    HeaderComponent,]
 })
 export class AppModule {
 }
