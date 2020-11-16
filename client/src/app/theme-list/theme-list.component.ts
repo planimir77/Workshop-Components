@@ -3,13 +3,13 @@ import { ITheme } from '../theme.interface';
 import { ThemeService } from './theme.service';
 
 @Component({
-  selector: 'app-theme',
-  templateUrl: './theme.component.html',
-  styleUrls: ['./theme.component.css']
+  selector: 'app-theme-list',
+  templateUrl: './theme-list.component.html',
+  styleUrls: ['./theme-list.component.css']
 })
 
 
-export class ThemeComponent implements OnInit {
+export class ThemeListComponent implements OnInit {
   themes: ITheme[];
 
   constructor(private themeService: ThemeService) { }
