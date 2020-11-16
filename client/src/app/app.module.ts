@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ThemeListItemComponent } from './theme-list-item/theme-list-item.component';
 import { AsideComponent } from './aside/aside.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AsideComponent } from './aside/aside.component';
     HomeComponent,
     ThemeListItemComponent,
     AsideComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
